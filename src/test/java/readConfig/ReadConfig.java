@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-
 public class ReadConfig {
 
 	Properties properties;
@@ -28,7 +27,7 @@ public class ReadConfig {
 	public String getBrowser() {
 		String browser = properties.getProperty("browser");
 		return browser;
-			
+
 	}
 
 	public String getURl() {
@@ -48,7 +47,7 @@ public class ReadConfig {
 	}
 
 	public String getPassword() {
-		String password = properties.getProperty("invalidPass");
+		String password = properties.getProperty("password");
 		return password;
 	}
 }

@@ -5,25 +5,26 @@ Feature: Login Page Functionality
 
   #When user Enters url
   #Given I am on the login page
-  @Sanity
+  #@Sanity
   Scenario: Successful login with valid credentials
     When I enter valid username
     And I enter valid password
     And I click on the login button
-    
-@Sanity
+
+ 
   Scenario: Unsuccessful login with invalid username
     When I enter an invalid username
     And I enter a valid password
     And I click on the login button
     Then I should see an error message indicating invalid credentials
 
-@Sanity
+  
   Scenario: Unsuccessful login with invalid password
     When I enter a valid username
     And I enter an invalid password
     Then I should see an error message indicating invalid credentials
-@regression
+
+  #@regression
   Scenario: Unsuccessful login with empty field
     When I leave the username and password fields empty.....And
     Then I should see an error message indicating required fields

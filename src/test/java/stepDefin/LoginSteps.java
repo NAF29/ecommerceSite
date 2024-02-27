@@ -1,7 +1,5 @@
 package stepDefin;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import java.io.File;
 import java.io.IOException;
 
@@ -14,21 +12,22 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+import pageObject.BaseClass;
 import pageObject.Login;
 import readConfig.ReadConfig;
 
 public class LoginSteps {
 
-	WebDriver driver;
-	Login login;
-	ReadConfig readConfig;
+	public WebDriver driver;
+	public Login login;
+	public ReadConfig readConfig;
 
-	@BeforeMethod
+	@Before
 	public void setup() throws IOException {
 		readConfig = new ReadConfig();
 		String browser = readConfig.getBrowser();
@@ -41,10 +40,11 @@ public class LoginSteps {
 			break;
 
 		case "safari":
+			WebDriverManager.safaridriver().setup();
 			driver = new SafariDriver();
 
 		default:
-			driver=null;
+			driver = null;
 			break;
 		}
 
@@ -52,13 +52,13 @@ public class LoginSteps {
 
 	@Given("user opens the browser")
 	public void user_opens_the_browser() throws IOException {
-		
+
 		driver.get(readConfig.getURl());
 
 		login = new Login(driver);
 	}
 
-	@When("user Enters url ")
+	@When("user Enters url")
 	public void user_enters_url() {
 
 	}
@@ -78,7 +78,7 @@ public class LoginSteps {
 	@Given("I click on the login button")
 	public void i_click_on_the_login_button() {
 		login.clickLoginButton();
-		String titleString=driver.getTitle();
+		String titleString = driver.getTitle();
 		System.out.println(titleString);
 
 	}
@@ -97,12 +97,11 @@ public class LoginSteps {
 	public void i_enter_a_valid_password() {
 		login.setPassWord(readConfig.getPassword());
 	}
-	
 
 	@Then("I should see an error message indicating invalid credentials")
 	public void i_should_see_an_error_message_indicating_invalid_credentials() {
 		driver.getTitle();
-		
+
 	}
 
 	@When("I enter a valid username")
@@ -123,7 +122,7 @@ public class LoginSteps {
 
 	@Then("I should see an error message indicating required fields")
 	public void i_should_see_an_error_message_indicating_required_fields() {
-		
+
 	}
 
 	@When("I click on the forgot password link")
@@ -162,20 +161,26 @@ public class LoginSteps {
 		throw new io.cucumber.java.PendingException();
 	}
 
-	@AfterMethod
+	@After
 	public void tearDown(Scenario sc) {
-		if(sc.isFailed()== true) {
+		if (sc.isFailed() == true) {
 			try {
-			File screenShotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			
+				File screenShotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
 				FileUtils.copyFile(screenShotFile, new File("/Users/nafis/eclipse/DemoSites/screenshot/heel.png"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 		driver.close();
+	}
+
+	@AfterStep
+	public void addScreenshot(Scenario scenario) {
+		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		scenario.attach(screenshot, "image/png", scenario.getName());
 	}
 
 }

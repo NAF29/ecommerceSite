@@ -1,52 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="3" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-13T17:27:28 IST" name="Default suite" finished-at="2024-02-13T17:27:39 IST" duration-ms="10450">
+  <suite started-at="2024-02-27T15:02:29 IST" name="Default suite" finished-at="2024-02-27T15:03:09 IST" duration-ms="39571">
     <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRuuner@3e08ff24]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-02-13T17:27:28 IST" name="Default test" finished-at="2024-02-13T17:27:39 IST" duration-ms="10450">
-      <class name="pageObject.Login">
-        <test-method signature="lohinWeb()[pri:0, instance:pageObject.Login@533bda92]" started-at="2024-02-13T17:27:28 IST" name="lohinWeb" finished-at="2024-02-13T17:27:39 IST" duration-ms="10414" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
+    <test started-at="2024-02-27T15:02:29 IST" name="Default test" finished-at="2024-02-27T15:03:09 IST" duration-ms="39571">
+      <class name="testRunner.TestRuuner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.TestRuuner@3e08ff24]" started-at="2024-02-27T15:02:29 IST" name="setUpClass" finished-at="2024-02-27T15:02:30 IST" duration-ms="801" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@30d15e4a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRuuner@3e08ff24]" started-at="2024-02-27T15:02:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-27T15:02:43 IST" duration-ms="12728" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Successful login with valid credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRuuner@3e08ff24]" started-at="2024-02-27T15:02:43 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-27T15:02:53 IST" duration-ms="9723" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Unsuccessful login with invalid username"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRuuner@3e08ff24]" started-at="2024-02-27T15:02:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-27T15:02:58 IST" duration-ms="5245" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Unsuccessful login with invalid password"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRuuner@3e08ff24]" started-at="2024-02-27T15:02:58 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-27T15:03:02 IST" duration-ms="3973" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Unsuccessful login with empty field"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
             <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=121.0.6167.160)
-Build info: version: '4.0.0', revision: '3a21814679'
-System info: host: 'My-Adda.local', ip: '2409:40e4:1a:bcbd:45c9:9acf:ad12:19ae%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.3', java.version: '17.0.10'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a70a932e686670871edf2748e96c3895, findElement {using=xpath, value=//h4[normalize-space()='We Just Need a Few Details.']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.160, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: /var/folders/zp/v0ncrkw54hl...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57326}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:57326/devtoo..., se:cdpVersion: 121.0.6167.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a70a932e686670871edf2748e96c3895]]>
+              <![CDATA[The step 'I leave the username and password fields empty.....And' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("I leave the username and password fields empty.....And")
+public void i_leave_the_username_and_password_fields_empty_and() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=121.0.6167.160)
-Build info: version: '4.0.0', revision: '3a21814679'
-System info: host: 'My-Adda.local', ip: '2409:40e4:1a:bcbd:45c9:9acf:ad12:19ae%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.3', java.version: '17.0.10'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a70a932e686670871edf2748e96c3895, findElement {using=xpath, value=//h4[normalize-space()='We Just Need a Few Details.']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.160, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: /var/folders/zp/v0ncrkw54hl...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57326}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:57326/devtoo..., se:cdpVersion: 121.0.6167.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a70a932e686670871edf2748e96c3895
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
-at pageObject.Login.lohinWeb(Login.java:26)
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'I leave the username and password fields empty.....And' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("I leave the username and password fields empty.....And")
+public void i_leave_the_username_and_password_fields_empty_and() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -77,11 +142,69 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- lohinWeb -->
-      </class> <!-- pageObject.Login -->
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRuuner@3e08ff24]" started-at="2024-02-27T15:03:02 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-27T15:03:05 IST" duration-ms="3246" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Forgot password link functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.java.PendingException">
+            <message>
+              <![CDATA[TODO: implement me]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.java.PendingException: TODO: implement me
+at stepDefin.LoginSteps.i_click_on_the_forgot_password_link(LoginSteps.java:131)
+at ✽.I click on the forgot password link(file:///Users/nafis/eclipse/DemoSites/featureFile/Login.feature:33)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.java.PendingException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRuuner@3e08ff24]" started-at="2024-02-27T15:03:05 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-27T15:03:08 IST" duration-ms="3412" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Remember me functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.java.PendingException">
+            <message>
+              <![CDATA[TODO: implement me]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.java.PendingException: TODO: implement me
+at stepDefin.LoginSteps.i_have_previously_logged_in_with_option_checked(LoginSteps.java:143)
+at ✽.I have previously logged in with "Remember Me" option checked(file:///Users/nafis/eclipse/DemoSites/featureFile/Login.feature:37)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.java.PendingException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestRuuner@3e08ff24]" started-at="2024-02-27T15:03:08 IST" name="tearDownClass" finished-at="2024-02-27T15:03:09 IST" duration-ms="394" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- testRunner.TestRuuner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pageObject.Login">
+      <class name="testRunner.TestRuuner">
         <methods>
-          <include name="lohinWeb"/>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="3 4 5"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- pageObject.Login -->
+      </class> <!-- testRunner.TestRuuner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

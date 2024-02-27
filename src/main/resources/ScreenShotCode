@@ -1,0 +1,12 @@
+public void tearDown(Scenario sc) {
+		if(sc.isFailed()== true) {
+			try {
+			File screenShotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			
+				FileUtils.copyFile(screenShotFile, new File("/Users/nafis/eclipse/DemoSites/screenshot/heel.png"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
