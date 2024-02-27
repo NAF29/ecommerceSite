@@ -3,7 +3,10 @@ package stepDefin;
 import java.io.File;
 import java.io.IOException;
 
+
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,19 +20,18 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pageObject.BaseClass;
+
 import pageObject.Login;
 import readConfig.ReadConfig;
 
-public class LoginSteps {
+public class LoginSteps extends BaseClass{
 
-	public WebDriver driver;
-	public Login login;
-	public ReadConfig readConfig;
 
 	@Before
 	public void setup() throws IOException {
 		readConfig = new ReadConfig();
+		log=LogManager.getLogger("stepDefin");
+		
 		String browser = readConfig.getBrowser();
 		switch (browser.toLowerCase()) {
 		case "chrome":
@@ -37,6 +39,7 @@ public class LoginSteps {
 			ChromeOptions opt = new ChromeOptions();
 			opt.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver(opt);
+			log.info("Setup executed");
 			break;
 
 		case "safari":
@@ -56,6 +59,7 @@ public class LoginSteps {
 		driver.get(readConfig.getURl());
 
 		login = new Login(driver);
+		log.info("browser open");
 	}
 
 	@When("user Enters url")
@@ -66,6 +70,7 @@ public class LoginSteps {
 	@When("I enter valid username")
 	public void i_enter_valid_username_and_password() {
 		login.setEmailId(readConfig.getEmail());
+		
 
 	}
 
@@ -85,7 +90,7 @@ public class LoginSteps {
 
 	@Given("I am on the login page")
 	public void i_am_on_the_login_page() {
-
+		log.warn("test Passed: login page");
 	}
 
 	@When("I enter an invalid username")

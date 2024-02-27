@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 		features = "/Users/nafis/eclipse/DemoSites/featureFile/Login.feature",
 		glue = "stepDefin",
 		dryRun = false,
-		//tags = "@Sanity",
+		tags = "@Sanity",
 		//plugin = {"pretty","html:target/cucumber-reports/reports1.html"}
 		plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 		
